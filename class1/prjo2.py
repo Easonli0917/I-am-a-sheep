@@ -1,0 +1,38 @@
+#######################匯入模組#######################
+# 匯入tkinter模組
+from tkinter import *
+
+
+#######################定義函數########################
+def hi():
+    # 顯示hi在終端機
+    print("hi")
+    hi2.config(text="hi", fg="red", bg="black")
+
+
+def clear():
+    hi2.config(text="", fg="white", bg="white")
+
+
+#######################建立視窗########################
+# 建立視窗
+windows = Tk()
+# 設置視窗名稱
+windows.title("I-am-a-sheep")
+########################建立按鈕########################
+# 建立按鈕
+hi1 = Button(windows, text="show screen", command=hi)
+# 創建一個按鈕當被按下時執行clear函數
+hi3 = Button(windows, text="clear screen", command=clear)
+# 設置按鈕位置
+hi1.pack()
+hi3.pack()
+########################建立標籤########################
+# 建立標籤
+# Label(樹窗名稱,文字內容,前景顏色,背景顏色)
+hi2 = Label(windows, text="")
+# 將標籤家入主視窗
+hi2.pack()
+#######################運行應用程式########################
+# 開始執行主迴圈等待用戶操作
+windows.mainloop()
