@@ -30,7 +30,7 @@ windows.iconbitmap("crocodile2.ico")
 
 # img = PhotoImage(file="crocodile2.png")
 
-image = Image.open("crocodile2.png")
+image = Image.open("images.png")
 
 img = ImageTk.PhotoImage(image)
 #########################顯示圖片#####################
