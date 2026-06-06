@@ -12,6 +12,7 @@ ICON_BASE_URL = "https://openweathermap.org/img/wn/"  # OpenWeather的密碼
 
 current_temp_c = 0  # 存目前的攝氏溫度（之後轉華氏用）
 
+
 # ===== 查天氣的函式 =====
 def get_weather():
 
@@ -80,18 +81,11 @@ top_frame = tk.Frame(root, bg="white")  # 建立上方區塊
 top_frame.pack(pady=30)  # 放上去並留空間
 
 city_label = tk.Label(  # 文字提示
-    top_frame,
-    text="請輸入想搜尋的城市：",
-    font=("微軟正黑體", 24),
-    bg="white"
+    top_frame, text="請輸入想搜尋的城市：", font=("微軟正黑體", 24), bg="white"
 )
 city_label.pack(side="left")  # 靠左
 
-city_entry = tk.Entry(  # 輸入框
-    top_frame,
-    font=("微軟正黑體", 24),
-    width=20
-)
+city_entry = tk.Entry(top_frame, font=("微軟正黑體", 24), width=20)  # 輸入框
 city_entry.pack(side="left", padx=10)  # 放中間
 
 search_button = tk.Button(  # 按鈕
@@ -101,7 +95,7 @@ search_button = tk.Button(  # 按鈕
     bg="#9ED9C8",
     fg="white",
     relief="flat",
-    command=get_weather  # 按下去就查天氣
+    command=get_weather,  # 按下去就查天氣
 )
 search_button.pack(side="left")
 
@@ -109,25 +103,16 @@ search_button.pack(side="left")
 middle_frame = tk.Frame(root, bg="white")  # 中間區塊
 middle_frame.pack(pady=20)
 
-icon_label = tk.Label(  # 天氣圖標
-    middle_frame,
-    bg="white"
-)
+icon_label = tk.Label(middle_frame, bg="white")  # 天氣圖標
 icon_label.grid(row=0, column=0, padx=80)
 
 temp_label = tk.Label(  # 溫度
-    middle_frame,
-    text="溫度: ?°C",
-    font=("微軟正黑體", 24),
-    bg="white"
+    middle_frame, text="溫度: ?°C", font=("微軟正黑體", 24), bg="white"
 )
 temp_label.grid(row=0, column=1, padx=80)
 
 desc_label = tk.Label(  # 天氣描述
-    middle_frame,
-    text="描述: ?",
-    font=("微軟正黑體", 24),
-    bg="white"
+    middle_frame, text="描述: ?", font=("微軟正黑體", 24), bg="white"
 )
 desc_label.grid(row=0, column=2, padx=80)
 
@@ -138,16 +123,13 @@ bottom_frame.pack()
 temp_var = tk.BooleanVar()  # 記錄有沒有勾選
 
 style = ttk.Style()  # 設定樣式
-style.configure(
-    "TCheckbutton",
-    font=("微軟正黑體", 18)
-)
+style.configure("TCheckbutton", font=("微軟正黑體", 18))
 
 check = ttk.Checkbutton(  # 勾選框
     bottom_frame,
     text="切換成華氏溫度 °F",
     variable=temp_var,
-    command=update_temperature  # 一改就更新溫度
+    command=update_temperature,  # 一改就更新溫度
 )
 check.pack()
 
