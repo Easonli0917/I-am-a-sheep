@@ -16,7 +16,6 @@ def make_circle(color, size=40):
         (0, 0, size * scale - 1, size * scale - 1),
         fill=color,
         outline="black",
-        width=scale,
     )
 
     img = img.resize((size, size), Image.LANCZOS)
