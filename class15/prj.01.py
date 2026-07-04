@@ -38,7 +38,8 @@ weather_api = WeatherAPI(os.getenv("WEATHER_API_KEY"))
 ai_assistant = AIAssistant(os.getenv("OPENAI_API_KEY"))
 # 限制讀取的歷史訊息數量，避免一次把整個頻道都交給 AI。
 CHANNEL_HISTORY_LIMIT = 15
-
+OPENAI_MODEL = "gpt-5.5"
+OPENAI_TEMPERATURE = 1
 # system_prompt 像是給 AI 的角色卡，會影響 AI 回覆的語氣和工作方式。
 CHAT_SYSTEM_PROMPT = """
 你是一個在 Discord 群組頻道中協助大家的 AI 助手。
